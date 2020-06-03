@@ -38,17 +38,22 @@ namespace BusinessLogic.Services
                 throw new ProductException("products not found");
             }
 
-            List<Product> products = new List<Product>();
+            List<Product> foundProducts = new List<Product>();
 
             foreach (Product product in allProducts)
             {
                 if (product.StoreId == storeId)
                 {
-                    products.Add(product);
+                    foundProducts.Add(product);
                 }
             }
 
-            return products;
+            if (foundProducts == null)
+            {
+                throw new ProductException("products with current storeId not found");
+            }
+
+            return foundProducts;
         }
 
         public void Dispose()

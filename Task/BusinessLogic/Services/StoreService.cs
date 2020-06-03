@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessLogic.Exceptions;
 using DataAcess.Entitites;
 using DataAcess.Interfaces;
-using DataAcess.Repositories;
 
 namespace BusinessLogic.Services
 {
