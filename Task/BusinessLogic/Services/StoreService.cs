@@ -20,6 +20,15 @@ namespace BusinessLogic.Services
             _storeRepository = storeRepository;
         }
 
+        public IEnumerable<Store> GetAll()
+        {
+            var stores = _storeRepository.All();
+            if (stores == null)
+            {
+
+            }
+        }
+
         public void Dispose()
         {
             Dispose(true);
