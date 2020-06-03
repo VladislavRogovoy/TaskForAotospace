@@ -16,9 +16,9 @@ namespace BusinessLogic.Services
 
         private bool _disposed;
 
-        public ProductService(IRepository<Product> producrRepository)
+        public ProductService(IRepository<Product> productRepository)
         {
-            _productRepository = producrRepository;
+            _productRepository = productRepository;
         }
 
         public IEnumerable<Product> GetAll()
@@ -28,6 +28,28 @@ namespace BusinessLogic.Services
             if (products == null)
             {
                 throw new ProductException("products not found");
+            }
+
+            return products;
+        }
+
+        public IEnumerable<Product> GetByStoreId(int storeId)
+        {
+            var allProducts = _productRepository.All();
+
+            if (allProducts == null)
+            {
+                throw new ProductException("products not found");
+            }
+
+            List<Product> products = new List<Product>();
+
+            foreach (Product product in allProducts)
+            {
+                if (product.StoreId == storeId)
+                {
+                    products.Add(product);
+                }
             }
 
             return products;
