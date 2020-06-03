@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLogic.Exceptions;
 using DataAcess.Entitites;
 using DataAcess.Interfaces;
 using DataAcess.Repositories;
@@ -25,8 +26,10 @@ namespace BusinessLogic.Services
             var stores = _storeRepository.All();
             if (stores == null)
             {
-
+                throw new StoreException("stores not found");
             }
+
+            return stores;
         }
 
         public void Dispose()

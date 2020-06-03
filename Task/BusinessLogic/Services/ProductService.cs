@@ -20,6 +20,11 @@ namespace BusinessLogic.Services
             _productRepository = producrRepository;
         }
 
+        public IEnumerable<Product> GetAll()
+        {
+
+        }
+
         public void Dispose()
         {
             Dispose(true);

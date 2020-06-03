@@ -1,12 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic.Exceptions
 {
-    class ProductException
+    [Serializable]
+    class ProductException : Exception
     {
+        public ProductException(string message)
+            : base(message)
+        {
+        }
+
+        public ProductException()
+        {
+        }
+
+        public ProductException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+        }
+
+        protected ProductException(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+            : base(serializationInfo, streamingContext)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
