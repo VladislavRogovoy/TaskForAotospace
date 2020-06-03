@@ -101,6 +101,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include = "Autofac" version = "5.1.2"/>
+    <PackageReference Include = "Autofac.Mvc5" version = "5.0.0"/>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
