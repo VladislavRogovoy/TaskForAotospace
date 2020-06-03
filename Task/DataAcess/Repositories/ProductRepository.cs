@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Linq;
-using DataAcess.Interfaces;
-using DataAcess.Entitites;
 using System.Data.Linq;
+using System.Linq;
+using DataAcess.Entitites;
+using DataAcess.Interfaces;
 
 namespace DataAcess.Repositories
 {

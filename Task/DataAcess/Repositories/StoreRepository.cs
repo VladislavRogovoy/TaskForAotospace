@@ -33,7 +33,7 @@ namespace DataAcess.Repositories
         {
             if (_disposed)
             {
-                if(disposing)
+                if (disposing)
                 {
                     DataContext.Dispose();
                 }
