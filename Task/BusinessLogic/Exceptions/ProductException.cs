@@ -3,7 +3,7 @@
 namespace BusinessLogic.Exceptions
 {
     [Serializable]
-    class ProductException : Exception
+    public class ProductException : Exception
     {
         public ProductException(string message)
             : base(message)
