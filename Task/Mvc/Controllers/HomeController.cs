@@ -14,6 +14,10 @@ namespace Mvc.Controllers
     {
         private readonly StoreService _storeService;
 
+        public HomeController()
+        {
+        }
+
         public HomeController(IRepository<Store> storeRepository)
         {
             _storeService = new StoreService(storeRepository);
