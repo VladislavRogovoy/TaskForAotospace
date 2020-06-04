@@ -118,6 +118,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include = "Autofac" Version = "5.2.0"/>
+    <PackageReference Include = "Autofac.Mvc5" Version = "5.0.0"/>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
