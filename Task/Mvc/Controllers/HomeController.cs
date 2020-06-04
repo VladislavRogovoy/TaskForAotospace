@@ -1,15 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DataAcess.Entitites;
+using DataAcess.Interfaces;
+using BusinessLogic.Services;
 
 namespace Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private readonly StoreService _storeService;
+
+        public HomeController(IRepository<Store> storeRepository)
         {
+            _storeService = new StoreService(storeRepository);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Index()
+        {
+            List<Store> storeEntitites = await Task.Run(() => _storeService.GetAll().ToList());
+            ViewBag.StoreEntities = storeEntitites;
             return View();
         }
 
