@@ -50,8 +50,6 @@
     <Compile Include="Interfaces\IManageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ManageService.cs" />
-    <Compile Include="Services\ProductService.cs" />
-    <Compile Include="Services\StoreService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAcess\DataAcess.csproj">

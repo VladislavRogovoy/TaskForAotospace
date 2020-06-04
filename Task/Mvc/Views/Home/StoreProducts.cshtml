@@ -1,10 +1,20 @@
 ﻿@{
-    ViewBag.Title = "StoreProducts";
 }
 
-    <div class="row">
-        <div class="col-md-4">
-            <table border="1">
+    <body>
+        <h3 style="text-align:center">Список товаров магазина</h3>
+
+        <br />
+
+        <table class="color_table">
+            <thead>
+                <tr>
+                    <td>Название</td>
+                    <td>Описание</td>
+                </tr>
+            </thead>
+
+            <tbody>
                 @foreach (var item in ViewBag.ProductEntities)
                 {
                     <tr>
@@ -12,6 +22,9 @@
                         <th>@item.Description</th>
                     </tr>
                 }
-            </table>
+            </tbody>
+        </table>
+        <div style="text-align:center">
+            @Html.ActionLink("На домашнюю страницу", "Index", "Home")
         </div>
-    </div>
+    </body>

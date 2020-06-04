@@ -3,9 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using BusinessLogic.Interfaces;
-using BusinessLogic.Services;
 using DataAcess.Entitites;
-using DataAcess.Interfaces;
 
 namespace Mvc.Controllers
 {
@@ -30,6 +28,7 @@ namespace Mvc.Controllers
             return View();
         }
 
+        [HttpGet]
         public async Task<ActionResult> StoreProducts(int storeId)
         {
             List<Product> productEntities = await Task.Run(() => _manageService.GetProductsByStoreId(storeId).ToList());

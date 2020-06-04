@@ -1,19 +1,30 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
 }
-<div class="row">
-    <div class="col-md-4">
-        <table border="1">
-            @foreach(var item in ViewBag.StoreEntities)
+
+<body>
+    <h3 style="text-align:center">Список магазинов</h3>
+
+    <br />
+
+    <table class="color_table">
+        <thead>
+            <tr>
+                <td>Название</td>
+                <td>Адрес</td>
+                <td>Режим работы</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in ViewBag.StoreEntities)
             {
                 <tr>
-                    <th>@item.Id</th>
                     <th>@item.Name</th>
                     <th>@item.Address</th>
                     <th>@item.OperatingMode</th>
-                    <th>@Html.ActionLink("Подробнее", "StoreProducts","Home", new { storeId = item.Id }, null)</th>
+                    <th>@Html.ActionLink("Подробнее", "StoreProducts", "Home", new { storeId = item.Id }, null)</th>
                 </tr>
             }
-        </table>
-    </div>
-</div>
+        </tbody>
+    </table>
+</body>
