@@ -10,23 +10,27 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            int[] mas = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-            var sortMas = from t in mas
-                      where t % 2 == 0
-                      select t;
-
-            int sum = sortMas.Sum();
-
-            Console.WriteLine(@"sum of odd numbers {0}", sum.ToString());
-
-            RemoveDublicateNumbers();
+            EvenNumbersSum();
+            RemoveDublicateSymbols();
             RemoveOddNumbers();
 
             Console.ReadLine();
         }
 
-        public static void RemoveDublicateNumbers()
+        public static void EvenNumbersSum()
+        {
+            int[] mas = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            var sortMas = from t in mas
+                          where t % 2 == 0
+                          select t;
+
+            int sum = sortMas.Sum();
+
+            Console.WriteLine(@"sum of even numbers {0}", sum.ToString());
+        }
+
+        public static void RemoveDublicateSymbols()
         {
             string str = "aabbkenyiiinosii";
             Console.WriteLine(str);
