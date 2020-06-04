@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BusinessLogic.Interfaces;
 using BusinessLogic.Services;
 using DataAcess.Entitites;
 using DataAcess.Interfaces;
@@ -10,24 +11,28 @@ namespace Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly StoreService _storeService;
-        //private readonly ProductService _productService;
+        private readonly IManageService _manageService;
 
         public HomeController()
         {
         }
 
-        public HomeController(IRepository<Store> storeRepository, IRepository<Product> productRepository)
+        public HomeController(IManageService manageService)
         {
-            _storeService = new StoreService(storeRepository);
-            //_productService = new ProductService(productRepository);
+            _manageService = manageService;
         }
 
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            List<Store> storeEntitites = await Task.Run(() => _storeService.GetAll().ToList());
+            List<Store> storeEntitites = await Task.Run(() => _manageService.GetAllStores().ToList());
             ViewBag.StoreEntities = storeEntitites;
+            return View();
+        }
+
+        public async Task<ActionResult> StoreProducts(int storeId)
+        {
+            List<Product> storeEntitites = await Task.Run(() => _manageService.GetProductsByStoreId(storeId).ToList());
             return View();
         }
     }
