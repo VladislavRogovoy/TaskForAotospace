@@ -16,8 +16,8 @@ namespace Mvc.Util
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
-            builder.RegisterType<StoreRepository>().As<IRepository<Store>>().WithParameter("connectionString", ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-            builder.RegisterType<ProductRepository>().As<IRepository<Product>>().WithParameter("connectionString", ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+            builder.RegisterType<StoreRepository>().As<IRepository<Store>>();
+            builder.RegisterType<ProductRepository>().As<IRepository<Product>>();
 
             var container = builder.Build();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.Linq;
 using System.Linq;
 using DataAcess.Entitites;
@@ -10,9 +11,9 @@ namespace DataAcess.Repositories
     {
         private bool _disposed;
 
-        public StoreRepository(string connectionString)
+        public StoreRepository()
         {
-            DataContext = new DataContext(connectionString);
+            DataContext = new DataContext(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         }
 
         private DataContext DataContext { get; }

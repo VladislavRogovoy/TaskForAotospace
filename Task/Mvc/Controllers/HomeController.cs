@@ -11,14 +11,16 @@ namespace Mvc.Controllers
     public class HomeController : Controller
     {
         private readonly StoreService _storeService;
+        //private readonly ProductService _productService;
 
         public HomeController()
         {
         }
 
-        public HomeController(IRepository<Store> storeRepository)
+        public HomeController(IRepository<Store> storeRepository, IRepository<Product> productRepository)
         {
             _storeService = new StoreService(storeRepository);
+            //_productService = new ProductService(productRepository);
         }
 
         [HttpGet]
