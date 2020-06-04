@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "StoreProducts";
+}
+
+    <div class="row">
+        <div class="col-md-4">
+            <table border="1">
+                @foreach (var item in ViewBag.ProductEntities)
+                {
+                    <tr>
+                        <th>@item.Name</th>
+                        <th>@item.Description</th>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>

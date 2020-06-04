@@ -11,7 +11,7 @@
                     <th>@item.Name</th>
                     <th>@item.Address</th>
                     <th>@item.OperatingMode</th>
-                    <th>@Html.ActionLink("Подробнее", "StoreProducts","Home")</th>
+                    <th>@Html.ActionLink("Подробнее", "StoreProducts","Home", new { storeId = item.Id }, null)</th>
                 </tr>
             }
         </table>

@@ -32,7 +32,8 @@ namespace Mvc.Controllers
 
         public async Task<ActionResult> StoreProducts(int storeId)
         {
-            List<Product> storeEntitites = await Task.Run(() => _manageService.GetProductsByStoreId(storeId).ToList());
+            List<Product> productEntities = await Task.Run(() => _manageService.GetProductsByStoreId(storeId).ToList());
+            ViewBag.ProductEntities = productEntities;
             return View();
         }
     }
