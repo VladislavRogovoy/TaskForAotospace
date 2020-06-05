@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BusinessLogic.Exceptions;
 using BusinessLogic.Interfaces;
-using DataAcess.Entitites;
+using DataAcess.Entities;
 using DataAcess.Interfaces;
 
 namespace BusinessLogic.Services

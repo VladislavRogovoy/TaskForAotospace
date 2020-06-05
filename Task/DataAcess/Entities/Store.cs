@@ -1,6 +1,6 @@
 ﻿using System.Data.Linq.Mapping;
 
-namespace DataAcess.Entitites
+namespace DataAcess.Entities
 {
     [Table(Name = "Stores")]
     public class Store

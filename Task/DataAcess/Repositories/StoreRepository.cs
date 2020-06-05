@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data.Linq;
 using System.Linq;
-using DataAcess.Entitites;
+using DataAcess.Entities;
 using DataAcess.Interfaces;
 
 namespace DataAcess.Repositories
